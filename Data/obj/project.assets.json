@@ -34,11 +34,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\duthi\\Downloads\\Interview\\Interview\\Data\\Data.csproj",
+      "projectUniqueName": "C:\\Users\\duthi\\source\\repos\\LeadDeveloper\\Data\\Data.csproj",
       "projectName": "Data",
-      "projectPath": "C:\\Users\\duthi\\Downloads\\Interview\\Interview\\Data\\Data.csproj",
+      "projectPath": "C:\\Users\\duthi\\source\\repos\\LeadDeveloper\\Data\\Data.csproj",
       "packagesPath": "C:\\Users\\duthi\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\duthi\\Downloads\\Interview\\Interview\\Data\\obj\\",
+      "outputPath": "C:\\Users\\duthi\\source\\repos\\LeadDeveloper\\Data\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
@@ -60,8 +60,8 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "C:\\Users\\duthi\\Downloads\\Interview\\Interview\\Shared\\Shared.csproj": {
-              "projectPath": "C:\\Users\\duthi\\Downloads\\Interview\\Interview\\Shared\\Shared.csproj"
+            "C:\\Users\\duthi\\source\\repos\\LeadDeveloper\\Shared\\Shared.csproj": {
+              "projectPath": "C:\\Users\\duthi\\source\\repos\\LeadDeveloper\\Shared\\Shared.csproj"
             }
           }
         }
