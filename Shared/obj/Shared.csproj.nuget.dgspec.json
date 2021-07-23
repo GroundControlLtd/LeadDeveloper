@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\duthi\\Downloads\\Interview\\Interview\\Shared\\Shared.csproj": {}
+    "C:\\Users\\duthi\\source\\repos\\LeadDeveloper\\Shared\\Shared.csproj": {}
   },
   "projects": {
-    "C:\\Users\\duthi\\Downloads\\Interview\\Interview\\Shared\\Shared.csproj": {
+    "C:\\Users\\duthi\\source\\repos\\LeadDeveloper\\Shared\\Shared.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\duthi\\Downloads\\Interview\\Interview\\Shared\\Shared.csproj",
+        "projectUniqueName": "C:\\Users\\duthi\\source\\repos\\LeadDeveloper\\Shared\\Shared.csproj",
         "projectName": "Shared",
-        "projectPath": "C:\\Users\\duthi\\Downloads\\Interview\\Interview\\Shared\\Shared.csproj",
+        "projectPath": "C:\\Users\\duthi\\source\\repos\\LeadDeveloper\\Shared\\Shared.csproj",
         "packagesPath": "C:\\Users\\duthi\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\duthi\\Downloads\\Interview\\Interview\\Shared\\obj\\",
+        "outputPath": "C:\\Users\\duthi\\source\\repos\\LeadDeveloper\\Shared\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
