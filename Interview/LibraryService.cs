@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Net.Http;
-using System.Text;
-using System.Text.Json;
 using System.Threading.Tasks;
 using Shared;
 
@@ -9,11 +7,6 @@ namespace Interview
 {
     public class LibraryService : ILibraryService
     {
-        public static JsonSerializerOptions JsonSerializerOptions = new JsonSerializerOptions()
-        {
-            PropertyNamingPolicy = JsonNamingPolicy.CamelCase,
-        };
-
         public async Task<string> BorrowBook(Book book)
         {
             using var client = new HttpClient {BaseAddress = new Uri("https://localhost:44321")};

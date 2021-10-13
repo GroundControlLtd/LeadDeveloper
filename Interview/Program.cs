@@ -1,13 +1,17 @@
-﻿using Shared;
+﻿using Data;
+using Shared;
 using System;
 using System.Threading.Tasks;
-
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
 namespace Interview
 {
     class Program
     {
         static async Task Main(string[] args)
         {
+
+
             Console.WriteLine("Hello World!");
 
             var book = new Book {Author = "Aldous Huxley", Title = "Brave New World"};
@@ -21,8 +25,10 @@ namespace Interview
 
             var garageService = new GarageService();
             var libraryService = new LibraryService();
-            var bookMessage = await libraryService.BorrowBook(book);
-            var carMessage = await garageService.BookMot(car);
+            var bookMessage =  libraryService.BorrowBook(book);
+            var carMessage =  garageService.BookMot(car);
+            await Task.WhenAll(bookMessage, carMessage);
+
             //await  garageService.
             Console.WriteLine($"{carMessage}");
             Console.WriteLine($"{bookMessage}");
