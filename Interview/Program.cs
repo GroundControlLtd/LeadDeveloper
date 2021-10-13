@@ -10,7 +10,13 @@ namespace Interview
     {
         static async Task Main(string[] args)
         {
+            var serviceProvider = new ServiceCollection()
+                .AddScoped<ILibraryService, LibraryService>()
+                .AddScoped<IGarageService, GarageService>()
+                .BuildServiceProvider(); ;
 
+            var libraryService = serviceProvider.GetService<ILibraryService>();
+            var garageService = serviceProvider.GetService<IGarageService>();
 
             Console.WriteLine("Hello World!");
 
@@ -23,8 +29,6 @@ namespace Interview
             //  - amend service calls below to run them in parallel 
             //  - Add some unit tests use Xunit 
 
-            var garageService = new GarageService();
-            var libraryService = new LibraryService();
             var bookMessage =  libraryService.BorrowBook(book);
             var carMessage =  garageService.BookMot(car);
             await Task.WhenAll(bookMessage, carMessage);
