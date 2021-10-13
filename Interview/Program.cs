@@ -13,7 +13,7 @@ namespace Interview
             var serviceProvider = new ServiceCollection()
                 .AddScoped<ILibraryService, LibraryService>()
                 .AddScoped<IGarageService, GarageService>()
-                .BuildServiceProvider(); ;
+                .BuildServiceProvider();
 
             var libraryService = serviceProvider.GetService<ILibraryService>();
             var garageService = serviceProvider.GetService<IGarageService>();
