@@ -5,6 +5,7 @@ using System.Linq;
 using System.Runtime.InteropServices.ComTypes;
 using System.Threading.Tasks;
 using Data;
+using Data.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using Shared;
 
@@ -14,11 +15,12 @@ namespace Api.Controllers
     [ApiController]
     public class GarageController : ControllerBase
     {
-        private readonly GarageRepository _garageRepository;
-        public GarageController()
+        private readonly IGarageRepository _garageRepository;
+        public GarageController(IGarageRepository garageRepository)
         {
-            this._garageRepository = new GarageRepository();
+            this._garageRepository = garageRepository;
         }
+       
 
         [HttpPost]
         [Route("{bookmot}")]

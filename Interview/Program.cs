@@ -1,5 +1,9 @@
-﻿using Shared;
+﻿using Interview.Configuration;
+using Interview.Interfaces;
+using Microsoft.Extensions.DependencyInjection;
+using Shared;
 using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace Interview
@@ -19,13 +23,27 @@ namespace Interview
             //  - amend service calls below to run them in parallel 
             //  - Add some unit tests use Xunit 
 
-            var garageService = new GarageService();
-            var libraryService = new LibraryService();
-            var bookMessage = await libraryService.BorrowBook(book);
-            var carMessage = await garageService.BookMot(car);
-            //await  garageService.
-            Console.WriteLine($"{carMessage}");
-            Console.WriteLine($"{bookMessage}");
+            //Services dependency injection
+            var services = new ServiceCollection();
+            services.AddTransient<IGarageService, GarageService>();
+            services.AddTransient<ILibraryService, LibraryService>();
+            services.AddTransient<IGarageServiceConfiguration, GarageServiceConfiguration>();
+            services.AddTransient<ILibraryServiceConfiguration, LibraryServiceConfiguration>();
+            var serviceProvider = services.BuildServiceProvider();
+
+            //Garage service instantiation
+            var garageService = serviceProvider.GetRequiredService<IGarageService>();
+
+            //Library service instantiation
+            var libraryService = serviceProvider.GetRequiredService<ILibraryService>();
+
+            //Run both methods parallelly
+            var bookMessageTask =   libraryService.BorrowBook(book);
+            var carMessageTask =   garageService.BookMot(car);      
+            await  Task.WhenAll(bookMessageTask, carMessageTask);
+
+            Console.WriteLine($"{bookMessageTask.Result}");
+            Console.WriteLine($"{carMessageTask.Result}");
             Console.ReadLine();
         }
     }
