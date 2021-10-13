@@ -1,9 +1,10 @@
 ﻿using System;
+using Data.Interfaces;
 using Shared;
 
 namespace Data
 {
-    public class GarageRepository
+    public class GarageRepository: IGarageRepository
     {
         public DateTime BookMot(Car car)
         {

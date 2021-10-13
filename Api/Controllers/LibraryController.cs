@@ -6,6 +6,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Data;
 using Shared;
+using Data.Interfaces;
 
 namespace Api.Controllers
 {
@@ -13,10 +14,10 @@ namespace Api.Controllers
     [ApiController]
     public class LibraryController : ControllerBase
     {
-        private readonly LibraryRepository _libraryRepository;
-        public LibraryController()
+        private readonly ILibraryRepository _libraryRepository;
+        public LibraryController(ILibraryRepository libraryRepository)
         {
-            this._libraryRepository = new LibraryRepository();
+            this._libraryRepository = libraryRepository;
         }
 
         [HttpPost]
