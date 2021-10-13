@@ -14,10 +14,10 @@ namespace Api.Controllers
     [ApiController]
     public class GarageController : ControllerBase
     {
-        private readonly GarageRepository _garageRepository;
-        public GarageController()
+        private readonly IGarageRepository _garageRepository;
+        public GarageController(IGarageRepository garageRepository)
         {
-            this._garageRepository = new GarageRepository();
+            _garageRepository = garageRepository;
         }
 
         [HttpPost]

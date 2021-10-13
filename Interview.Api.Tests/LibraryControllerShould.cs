@@ -1,5 +1,6 @@
 ﻿using System;
 using Api.Controllers;
+using Data;
 using Microsoft.AspNetCore.Mvc;
 using Shared;
 using Xunit;
@@ -18,7 +19,8 @@ namespace Interview.Api.Tests
         {
             //Arrange
             const string expectedValue = "Book not found!";
-            var controller = new LibraryController();
+            var libraryRepository = new LibraryRepository();
+            var controller = new LibraryController(libraryRepository);
             var book = new Book {Title=bookTitle, Author = bookAuthor};
             //Act
             var response = controller.BorrowBook(book);
@@ -35,7 +37,8 @@ namespace Interview.Api.Tests
             //Arrange
             var returnDate = DateTime.Now.AddDays(30).ToString("dd-MMM-yyyy");
             var expectedValue = $"{bookTitle} borrowed until the {returnDate}";
-            var controller = new LibraryController();
+            var libraryRepository = new LibraryRepository();
+            var controller = new LibraryController(libraryRepository);
             var book = new Book { Title = bookTitle, Author = bookAuthor };
             //Act
             var response = controller.BorrowBook(book);

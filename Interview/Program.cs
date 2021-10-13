@@ -29,13 +29,13 @@ namespace Interview
             //  - amend service calls below to run them in parallel 
             //  - Add some unit tests use Xunit 
 
-            var bookMessage =  libraryService.BorrowBook(book);
-            var carMessage =  garageService.BookMot(car);
-            await Task.WhenAll(bookMessage, carMessage);
+            var bookMessage = libraryService.BorrowBook(book);
+            var carMessage = garageService.BookMot(car);
+            await Task.WhenAll(carMessage, bookMessage );
 
             //await  garageService.
             Console.WriteLine($"{carMessage}");
-            Console.WriteLine($"{bookMessage}");
+            //Console.WriteLine($"{bookMessage}");
             Console.ReadLine();
         }
     }

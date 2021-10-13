@@ -13,10 +13,10 @@ namespace Api.Controllers
     [ApiController]
     public class LibraryController : ControllerBase
     {
-        private readonly LibraryRepository _libraryRepository;
-        public LibraryController()
+        private readonly ILibraryRepository _libraryRepository;
+        public LibraryController(ILibraryRepository libraryRepository)
         {
-            this._libraryRepository = new LibraryRepository();
+            _libraryRepository = libraryRepository;
         }
 
         [HttpPost]

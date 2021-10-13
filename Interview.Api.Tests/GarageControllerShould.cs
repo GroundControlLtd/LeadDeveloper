@@ -1,5 +1,6 @@
 ﻿using System;
 using Api.Controllers;
+using Data;
 using Microsoft.AspNetCore.Mvc;
 using Shared;
 using Xunit;
@@ -17,7 +18,8 @@ namespace Interview.Api.Tests
         public void ReturnExpectedDataWhenBookingMotGivenACar(string carMake, string carModel)
         {
             //Arrange
-            var controller = new GarageController();
+            var garageRepository = new GarageRepository();
+            var controller = new GarageController(garageRepository);
             var car = new Car { Make=carMake,Model=carModel };
             var date = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, 11, 15, 0).AddDays(3);
 
