@@ -17,9 +17,8 @@ namespace Interview
         public async Task<string> BookMot(Car car)
         {
             using var client = new HttpClient { BaseAddress = new Uri("https://localhost:44321") };
-            var json = JsonSerializer.Serialize(car, JsonSerializerOptions);
-            HttpContent content = new StringContent(json, Encoding.UTF8, "application/json");
-            var response = await client.PostAsync("/api/garage/bookmot", content);
+
+            var response = await client.PostAsync("/api/garage/bookmot", car.ToHttpContent());
             if (!response.IsSuccessStatusCode)
             {
                 throw new Exception(response.ReasonPhrase);

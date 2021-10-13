@@ -14,7 +14,7 @@ namespace Interview.Api.Tests
         [InlineData("Unknown", "Unknown")]
         [InlineData("Nissan", "Primera")]
         [InlineData("Lotus", "Espirit")]
-        public void ReturnExpectedDateWhenBookingMotGivenACar(string carMake, string carModel)
+        public void ReturnExpectedDataWhenBookingMotGivenACar(string carMake, string carModel)
         {
             //Arrange
             var controller = new GarageController();
